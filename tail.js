@@ -13,4 +13,6 @@ const tail = function(array) {
 };
 
 const result = tail(["Hello", "Lighthouse", "Labs"]);
+
+assertEqual(result.length, 2);
 assertEqual(result.join(), ["Lighthouse", "Labs"].join());
