@@ -35,5 +35,3 @@ assertEqual(results["a"], 1);
 //for each letter, add the letter to letterCount as a key with the value of 1
 //if letter is already in letterCount, just incread the value by 1
 //at the end, return the object.
-
-//WHAT DOES ASSERTEQUAL DO HERE? WHAT IS THERE TO COMPARE?
