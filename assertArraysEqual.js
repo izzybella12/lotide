@@ -3,8 +3,8 @@
 const assertArraysEqual = function(firstArray, secondArray) {
   let orderedFirstArray = "";
   let orderedSecondArray = "";
-  for (let i = 0; i < firstArray.length; i++) { //This goes through everything besides the last element
-    orderedFirstArray += firstArray[i]; //this adds each number indexed followed by a comma to ordered first array
+  for (let i = 0; i < firstArray.length; i++) { 
+    orderedFirstArray += firstArray[i];
     if (i < firstArray.length - 1) {
       orderedFirstArray += ", ";
     }
