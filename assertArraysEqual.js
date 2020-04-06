@@ -1,29 +1,31 @@
-//This function orders elements in an array
+const eqArrays = require('./eqArrays');
 
 const assertArraysEqual = function(firstArray, secondArray) {
-  let orderedFirstArray = "";
-  let orderedSecondArray = "";
-  for (let i = 0; i < firstArray.length; i++) { 
-    orderedFirstArray += firstArray[i];
-    if (i < firstArray.length - 1) {
-      orderedFirstArray += ", ";
-    }
-  }
-  for (let j = 0; j < secondArray.length; j++) {
-    orderedSecondArray += secondArray[j];
-    if (j < secondArray.length - 1) {
-      orderedSecondArray += ", ";
-    }
-  }
-  if (orderedFirstArray === orderedSecondArray) {
-    return `✅✅✅ Assertion Passed: ${orderedFirstArray} === ${orderedSecondArray}`;
+  if (eqArrays(firstArray, secondArray) === true) {
+    return `✅✅✅ Assertion Passed: ${firstArray} === ${secondArray}`;
   } else {
-    return `🛑🛑🛑 Assertion Failed: ${orderedFirstArray} !== ${orderedSecondArray}`;
+    return `🛑🛑🛑 Assertion Failed: ${firstArray} !== ${secondArray}`;
   }
 };
 
-console.log(assertArraysEqual([1, 2, 3], [1, 2, 3]));
+module.exports = assertArraysEqual;
 
 
+// AN ADDITION I HAD INITIALLY USED FOR EQARRAYS/ASSERTARRAYSEQUAL
+// THIS ADDITION ADDS A COMMA BETWEEN VARIABLES IN A STRING
+// let orderedFirstArray = "";
+// let orderedSecondArray = "";
+// for (let i = 0; i < firstArray.length; i++) { 
+//   orderedFirstArray += firstArray[i];
+//   if (i < firstArray.length - 1) {
+//     orderedFirstArray += ", ";
+//   }
+// }
+// for (let j = 0; j < secondArray.length; j++) {
+//   orderedSecondArray += secondArray[j];
+//   if (j < secondArray.length - 1) {
+//     orderedSecondArray += ", ";
+//   }
+// }
 
 
