@@ -1,28 +1,5 @@
-const assertArraysEqual = function(firstArray, secondArray) {
-  let orderedFirstArray = "";
-  let orderedSecondArray = "";
-  for (let i = 0; i < firstArray.length; i++) { 
-    orderedFirstArray += firstArray[i];
-    if (i < firstArray.length - 1) {
-      orderedFirstArray += ", ";
-    }
-  }
-  for (let j = 0; j < secondArray.length; j++) {
-    orderedSecondArray += secondArray[j];
-    if (j < secondArray.length - 1) {
-      orderedSecondArray += ", ";
-    }
-  }
-  if (orderedFirstArray === orderedSecondArray) {
-    return `✅✅✅ Assertion Passed: ${orderedFirstArray} === ${orderedSecondArray}`;
-  } else {
-    return `🛑🛑🛑 Assertion Failed: ${orderedFirstArray} !== ${orderedSecondArray}`;
-  }
-};
-
-// console.log(assertArraysEqual([1, 2, 3], [1, 2, 3]));
-
-////////////////////////////////
+const eqArrays = require('./eqArrays');
+const assertArraysEqual = require('./assertArraysEqual');
 
 const middle = function(array) {
 let middleNums = [];
@@ -37,12 +14,7 @@ let arrayDivided = (array.length / 2);
   return middleNums;
 };
 
-console.log(assertArraysEqual(middle([1]), []));
-console.log(assertArraysEqual(middle([1, 2]), []));
-console.log(assertArraysEqual(middle([1, 2, 3]), [2]));
-console.log(assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]));
-console.log(assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]));
-console.log(assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]));
+module.exports = middle;
 
 //The middle function should return an array with only the middle element(s) 
 //of the provided array
