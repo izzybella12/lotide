@@ -1,10 +1,4 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+const assertEqual = require('./assertEqual');
 
 //The function takes in a sentence string and returns a count of each of the letters
 //in that sentence
@@ -23,11 +17,14 @@ let countLetters = function(stringSentence) {
 
 const results = (countLetters("bella"));
 
-assertEqual(results["b"], 1);
-assertEqual(results["e"], 1);
-assertEqual(results["l"], 2);
-assertEqual(results["l"], 2);
-assertEqual(results["a"], 1);
+module.exports = countLetters;
+
+
+// assertEqual(results["b"], 1);
+// assertEqual(results["e"], 1);
+// assertEqual(results["l"], 2);
+// assertEqual(results["l"], 2);
+// assertEqual(results["a"], 1);
 
 //The stringSentence should be return in a new object: letterCount!
 //We need a for...of loop to iterate over the stringSentence
